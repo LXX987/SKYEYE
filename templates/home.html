@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 
 <head>
@@ -7,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>Sidebar Menu</title>
   <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
 </head>
 
 <body>
@@ -16,7 +17,7 @@
       <span class="shrink-btn">
         <i class='bx bx-chevron-left'></i>
       </span>
-      <img src="./img/logo.png" class="logo" alt="">
+      <img src="{% static 'img/face-1.png' %}" class="logo" alt="">
       <h3 class="hide">天眼</h3>
     </div>
 
@@ -116,7 +117,7 @@
       </a>
       <div class="admin-user tooltip-element" data-tooltip="1">
         <div class="admin-profile hide">
-          <img src="./img/face-1.png" alt="">
+          <img src="{% static 'img/face-1.png' %}" alt="">
           <div class="admin-info">
             <h3>LXT</h3>
             <h5>Admin</h5>
@@ -135,16 +136,6 @@
 
 
   <main>
-    <!-- <h1>My Dashboard</h1>
-    <p class="text">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur animi voluptatibus cum maxime distinctio
-      iste quod deleniti eius, autem voluptates cumque suscipit iure quasi eligendi ullam. Sapiente eligendi porro
-      reprehenderit corrupti error facilis quo, fugiat fugit? Maiores aliquam ad, molestiae iste nihil, commodi
-      doloremque tempore excepturi aut id ducimus unde?
-    </p>
-    <p class="copyright">
-      &copy; 2021 - <span>Aqumex</span> All Rights Reserved.
-    </p> -->
     <div id="container"></div>
 <script src="https://webapi.amap.com/maps?v=1.4.15&key=0bc020b4dc96cc05dedae8e7ba4f2d1a"></script>
   </main>
@@ -155,7 +146,7 @@
         zoom: 20
     });
   </script>
-  <script src="app.js"></script>
+  <script src="{% static 'js/home.js' %}"></script>
 </body>
 
 </html>
