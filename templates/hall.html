@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>图片大厅</title>
+    {#  下面是通用的样式  #}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/nav.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/iconfont.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
+    {#  下面是页面独有样式  #}
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/hall.css' %}">
+</head>
+
+
+<body>
+
+<div id="head">
+    <div class="head-left">
+        <ul>
+            <li><a href="#"><img src="{% static 'imgs/home.png' %}"></a></li>
+        </ul>
+    </div>
+    <div class="head-right">
+        <ul>
+            <li><a href="#" id="user_showName">游客</a></li>
+            <li><a href="#" id="login_status">请先登录</a></li>
+        </ul>
+    </div>
+</div>
+
+
+<div id="mid">
+    <div class="nav" id="nav">
+        <div class="nav-top">
+            <div id="mini" style="border-bottom:1px solid rgba(255,255,255,.1)">
+                <img src="{% static 'imgs/mini.png' %}">
+            </div>
+        </div>
+        <ul>
+            <li class="nav-item" id="nav-item1">
+                <a>
+                    <i class="my-icon nav-icon icon_1"></i>
+                    <span id="fir_div">我的收藏</span>
+                </a>
+            </li>
+            <li class="nav-item" id="nav-item2">
+                <a>
+                    <i class="my-icon nav-icon icon_2"></i>
+                    <span id="sec_div">图片大厅</span>
+                </a>
+            </li>
+            <li class="nav-item" id="nav-item3">
+                <a>
+                    <i class="my-icon nav-icon icon_3"></i>
+                    <span id="thi_div">预测上传</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div id='main' class="chan_list">
+        {#  下面是展示的主要部分  #}
+        <div class="img-list">
+            <ul>
+                {% for info in page_object.object_list %}
+                    <li class="image_cont">
+                        <img src="http://127.0.0.1:8000/static/Data/input/{{ info.image_name }}" class="img_ini">
+                        <img src="http://127.0.0.1:8000/static/Data/finalOutput/{{ info.image_name }}"
+                             class="img_pre">
+                        <div class="image-div-left">
+                            <span>发布者:{{ info.image_publisher }}</span>
+                            <span>名称:{{ info.image_name }}</span>
+                        </div>
+                        <div class="image-div-right">
+                           <a href="#"><img src="{% static 'imgs/enter.png' %}" onclick="getDetails({{ info.image_id }})"></a>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="bottom-nav">
+            {#  下面是分页的导航栏  #}
+            <nav aria-label="Page navigation">
+                <div class="nav-ul">
+                    <ul class="pagination">
+                        {% if page_object.has_previous %}
+                            <li>
+                                <a href="{% url 'polls:toHall' %}?page={{ page_object.previous_page_number }}"
+                                   aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                        {% else %}
+                            <li class="disable">
+                                <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                        {% endif %}
+
+                        {% for page_index in page_range %}
+                            {% ifequal page_index page_object.number %}
+                                <li class="active">
+                                    <a href="{% url 'polls:toHall' %}?page={{ page_index }}">{{ page_index }}</a>
+                                </li>
+                            {% else %}
+                                <li>
+                                    <a href="{% url 'polls:toHall' %}?page={{ page_index }}">{{ page_index }}</a>
+                                </li>
+                            {% endifequal %}
+                        {% endfor %}
+
+                        {% if page_object.has_next %}
+                            <li>
+                                <a href="{% url 'polls:toHall' %}?page={{ page_object.next_page_number }}"
+                                   aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        {% else %}
+                            <li class="disable">
+                                <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </nav>
+
+        </div>
+    </div>
+</div>
+
+
+<div id='foot'>
+    <ul>
+        <li><a href="#">Tongji</a></li>
+        <li><a href="#">zhujitao</a></li>
+        <li><a href="#">1752267</a></li>
+        <li><a href="#">Copyright</a></li>
+    </ul>
+</div>
+
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/nav.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/hall.js' %}"></script>
+<script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
+
+</body>
+</html>

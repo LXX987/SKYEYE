@@ -1,0 +1,196 @@
+/*侧边导航栏设置*/
+#nav-item3{
+    background: #1e1b29;
+}
+
+#nav-item3 a{
+    font-weight: bolder;
+    color: white;
+}
+
+
+/*主体部分的布局*/
+#main{
+    display: inline-block;
+    width:87%;
+    height:100%;
+    /*background-color:floralwhite;*/
+    float:left;
+}
+
+#main-top{
+    width: 100%;
+    height: 85%;
+}
+
+/*图片展示设置布局,在上左侧*/
+#main-top-left{
+    width: 70%;
+    height: 100%;
+    /*background-color: #33ccff;*/
+    float: left;
+    display: inline-block;
+}
+
+#main-top-left p{
+    font-size: 20px;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+#ini_img-container,
+#pre_img-container{
+    width:350px;
+    height:350px;
+    margin-left: 30px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border:2px solid black;
+    float: left;
+    display: inline-block;
+}
+
+#pre_img,
+#ini_img{
+    width: 100%;
+    height: 100%;
+}
+
+
+/*展示信息的布局，在上右侧*/
+#main-top-right{
+    width: 30%;
+    height: 100%;
+    /*background-color: yellowgreen;*/
+    float: left;
+    display: inline-block;
+}
+
+#right-top{
+    height: 40%;
+    width: 100%;
+    margin-top: 60px;
+}
+
+#right-top p{
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+#right-bottom{
+    height: 40%;
+    width: 100%;
+    /*background-color: yellowgreen;*/
+}
+
+#comment_text{
+    width: 90%;
+    height: 50%;
+    border-radius: 3px;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    border:1px solid black;
+}
+
+#publish_or{
+    width: 12px;
+    height: 12px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+
+#hand-img {
+    margin-left: 5px;
+    font-size: medium;
+}
+
+#todb{
+    width: 30px;
+    height: 30px;
+    margin-left: 100px;
+    cursor: pointer;
+}
+
+
+#right-top-left{
+    width: 40%;
+    height: 100%;
+    float: left;
+    display: inline-block;
+    /*background-color: #33ccff;*/
+}
+
+#right-top-right{
+    width: 60%;
+    height: 100%;
+    float: left;
+    display: inline-block;
+    /*background-color: darkgoldenrod;*/
+}
+
+#right-top-left span{
+    margin-top: 5px;
+    font-size: 16px;
+    margin-left: 5px;
+    display: block;
+}
+
+#right-top-right a{
+    margin-top: 5px;
+    font-size: 16px;
+    margin-left: 5px;
+    display: block;
+}
+
+
+/*各种按钮的布局，在下册*/
+#btn-content{
+    width: 100%;
+    height: 15%;
+    /*background-color: cornsilk;*/
+}
+
+#file_img{
+    font-size: xx-large;
+    width: 50px;
+    height: 50px;
+    margin-left: 50px;
+    position:absolute;
+    opacity:0;
+}
+
+#upload-img,
+#predict-img,
+#select-img{
+    margin-left: 5px;
+    font-size: medium;
+    /*cursor: none;*/
+}
+
+#temp-file-img{
+    width: 50px;
+    height: 50px;
+    margin-left: 50px;
+    /*border:1px solid red;*/
+    cursor: pointer;
+}
+
+#getImage_btn{
+    width: 50px;
+    height: 50px;
+    margin-left: 50px;
+    /*border:1px solid grey;*/
+    cursor: pointer;
+}
+
+#toPre{
+    width: 50px;
+    height: 50px;
+    margin-left: 50px;
+    /*border:1px solid yellow;*/
+    cursor: pointer;
+}
+
+

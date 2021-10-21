@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>个人收藏</title>
+    {#  下面是通用的样式  #}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/nav.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/iconfont.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
+    {#  下面是页面独有样式  #}
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/predict.css' %}">
+</head>
+
+
+<body>
+
+<div id="head">
+    <div class="head-left">
+        <ul>
+            <li><a href="#"><img src="{% static 'imgs/home.png' %}"></a></li>
+        </ul>
+    </div>
+    <div class="head-right">
+        <ul>
+            <li><a href="#" id="user_showName">游客</a></li>
+            <li><a href="#" id="login_status">请先登录</a></li>
+        </ul>
+    </div>
+</div>
+
+
+<div id="mid">
+    <div class="nav" id="nav">
+        <div class="nav-top">
+            <div id="mini" style="border-bottom:1px solid rgba(255,255,255,.1)">
+                <img src="{% static 'imgs/mini.png' %}">
+            </div>
+        </div>
+        <ul>
+            <li class="nav-item" id="nav-item1">
+                <a>
+                    <i class="my-icon nav-icon icon_1"></i>
+                    <span id="fir_div">我的收藏</span>
+                </a>
+            </li>
+            <li class="nav-item" id="nav-item2">
+                <a>
+                    <i class="my-icon nav-icon icon_2"></i>
+                    <span id="sec_div">图片大厅</span>
+                </a>
+            </li>
+            <li class="nav-item" id="nav-item3">
+                <a>
+                    <i class="my-icon nav-icon icon_3"></i>
+                    <span id="thi_div">预测上传</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div id='main'>
+        <div id="main-top">
+
+            <div id="main-top-left">
+                <p>请在这里上传图片并预测！</p>
+                <div id="ini_img-container">
+                    <img src="{% static 'imgs/123.png' %}" id="ini_img">
+                </div>
+                <div id="pre_img-container">
+                    <img src="{% static 'imgs/123.png' %}" id="pre_img">
+                </div>
+            </div>
+
+            <div id="main-top-right">
+                <div id="right-top">
+                    <p>预测信息如下：</p>
+                    <div id="right-top-left">
+                        <span>名称:</span>
+                        <span>无关背景:(黑色)</span>
+                        <span>烟草:(红色)</span>
+                        <span>薏仁米:(绿色)</span>
+                        <span>玉米:(黄色色)</span>
+                        <span>建筑物:(蓝色)</span>
+                    </div>
+                    <div id="right-top-right">
+                        <a id="show_name">--</a>
+                        <a id="show_0">--</a>
+                        <a id="show_1">--</a>
+                        <a id="show_2">--</a>
+                        <a id="show_3">--</a>
+                        <a id="show_4">--</a>
+                    </div>
+                </div>
+                <div id="right-bottom">
+                    <textarea id="comment_text" cols="40" rows="5">请输入描述信息！</textarea>
+                    <br>
+                    <input id="publish_or" type="checkbox" />是否公开
+
+                    <img src="{% static 'imgs/upload(2).png' %}" id="todb">
+                    <a id="hand-img">提交信息</a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="btn-content">
+            <form id="tf" style="position:relative">
+                {% csrf_token %}
+                <input type="file" id="file_img" name="img">
+                <img src="{% static 'imgs/select.png' %}" id="temp-file-img">
+                <a id="select-img">选择图片</a>
+                <img src="{% static 'imgs/upload(1).png' %}" id="getImage_btn">
+                <a id="upload-img">上传图片</a>
+                <img src="{% static 'imgs/exe.png' %}" id="toPre">
+                <a id="predict-img">预测信息</a>
+                <i id='icon'></i>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+<div id='foot'>
+    <ul>
+        <li><a href="#">Tongji</a></li>
+        <li><a href="#">zhujitao</a></li>
+        <li><a href="#">1752267</a></li>
+        <li><a href="#">Copyright</a></li>
+    </ul>
+</div>
+
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/nav.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/predict.js' %}"></script>
+<script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
+
+</body>
+</html>

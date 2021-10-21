@@ -1,0 +1,145 @@
+/*主体部分的布局*/
+#main{
+    display: inline-block;
+    width:87%;
+    height:100%;
+    /*background-color:floralwhite;*/
+    float:left;
+}
+
+
+/*图片展示设置布局,在左侧*/
+#main-top-left{
+    width: 70%;
+    height: 100%;
+    /*background-color: #33ccff;*/
+    float: left;
+    display: inline-block;
+}
+
+#main-top-left p{
+    font-size: 20px;
+    margin-left: 30px;
+    margin-top: 25px;
+}
+
+#ini_img-container,
+#pre_img-container{
+    width:360px;
+    height:360px;
+    margin-left: 15px;
+    margin-top: 25px;
+    border-radius: 5px;
+    border:2px solid black;
+    float: left;
+    display: inline-block;
+}
+
+#ini_img-container span,
+#pre_img-container span{
+    margin-left: 40%;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 20px;
+}
+
+#pre_img,
+#ini_img{
+    width: 100%;
+    height: 100%;
+}
+
+
+/*展示信息的布局，在右侧*/
+#main-top-right{
+    width: 30%;
+    height: 100%;
+    /*background-color: yellowgreen;*/
+    float: left;
+    display: inline-block;
+}
+
+#right-top{
+    height: 43%;
+    width: 100%;
+    margin-top: 70px;
+    /*background-color: cornflowerblue;*/
+}
+
+#right-top p{
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+
+#right-top-left{
+    width: 40%;
+    height: 100%;
+    float: left;
+    display: inline-block;
+    /*background-color: #33ccff;*/
+}
+
+#right-top-right{
+    width: 60%;
+    height: 100%;
+    float: left;
+    display: inline-block;
+    /*background-color: darkgoldenrod;*/
+}
+
+#right-top-left span{
+    margin-top: 8px;
+    font-size: 16px;
+    margin-left: 5px;
+    display: block;
+}
+
+#right-top-right a{
+    margin-top: 8px;
+    font-size: 16px;
+    margin-left: 5px;
+    display: block;
+}
+
+
+#right-bottom{
+    height: 30%;
+    width: 100%;
+    margin-top: 0px;
+    /*background-color: yellowgreen;*/
+}
+
+#right-bottom span{
+    display: block;
+    margin-left: 5px;
+    margin-top: 10px;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+#comment_text{
+    width: 90%;
+    height: 40%;
+    border-radius: 3px;
+    margin-left: 5px;
+    border:1px solid black;
+}
+
+#star-img {
+    margin-left: 5px;
+    font-size: medium;
+    /*line-height: 40px;*/
+}
+
+#star{
+    width: 40px;
+    height: 40px;
+    margin-left: 15px;
+    /*margin-top: 5px;*/
+    cursor: pointer;
+}
+
+
+

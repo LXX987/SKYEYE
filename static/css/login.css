@@ -41,7 +41,7 @@ html, body{
 }
 
 .liquid{
-    background: url('../assets/Wave.png');
+    background:url('./../imgs/Wave.png');
     background-size: cover;
     background-repeat: no-repeat;
 }

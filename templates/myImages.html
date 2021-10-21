@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+{% load static %}
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>主页</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/nav.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/iconfont.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    {#    <link rel="stylesheet" type="text/css" href="{% static 'css/imageDetail.css' %}" >#}
+</head>
+
+
+<body>
+
+<div id='head'>
+    <ul id="ul1">
+        <li><a href="#">首页</a></li>
+        <li><a href="#">智慧未来</a></li>
+    </ul>
+    <ul id="ul2">
+        <li><a href="#" id="user_showName">游客</a></li>
+        <li><a href="#" id="login_status">请先登录</a></li>
+    </ul>
+</div>
+
+<div class="nav" id="nav">
+    <div class="nav-top">
+        <div id="mini" style="border-bottom:1px solid rgba(255,255,255,.1)">
+            <img src="{% static 'imgs/mini.png' %}">
+        </div>
+    </div>
+    <ul>
+        <li class="nav-item" class="selected">
+            {#                <a href="javascript:changeDiv(1)">#}
+            <a>
+                <i class="my-icon nav-icon icon_1"></i>
+                <span id="fir_div">我的收藏</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            {#                <a href="javascript:changeDiv(2)">#}
+            <a>
+                <i class="my-icon nav-icon icon_2"></i>
+                <span id="sec_div">图片大厅</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            {#                <a href="javascript:changeDiv(3)">#}
+            <a>
+                <i class="my-icon nav-icon icon_3"></i>
+                <span id="thi_div">预测上传</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+<div id='main1' class="chan_list">
+    <div id="resultBox"></div>
+    <div id="paging">
+        <div class="first">首页</div>
+        <div class="prev">上一页</div>
+        <ul class="list"></ul>
+        <div class="next">下一页</div>
+        <div class="last">末页</div>
+    </div>
+</div>
+
+
+<div id='foot'>
+    <ul>
+        <li><a href="#">Tongji | </a></li>
+        <li><a href="#">zhujitao | </a></li>
+        <li><a href="#">1752267 | </a></li>
+        <li><a href="#">Copyright</a></li>
+    </ul>
+</div>
+
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/nav.js' %}"></script>
+{#    <script type="text/javascript" src="{% static 'js/data.js' %}" ></script>#}
+{#    <script type="text/javascript" src="{% static 'js/paging1.js' %}" ></script>#}
+<script type="text/javascript" src="{% static 'js/loginAregister.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/myImages.js' %}"></script>
+
+
+</body>
+</html>

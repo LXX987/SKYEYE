@@ -1,0 +1,107 @@
+#nav-item1{
+    background: #1e1b29;
+}
+
+#nav-item1 a{
+    font-weight: bolder;
+    color: white;
+}
+
+/*主体部分的布局*/
+#main{
+    display: inline-block;
+    width:87%;
+    height:100%;
+    /*background-color:floralwhite;*/
+    float:left;
+}
+
+.img-list{
+    height: 90%;
+    width: 100%;
+    /*background-color: #3377AA;*/
+}
+
+.bottom-nav{
+    height: 10%;
+    width: 100%;
+    /*background-color: #33ccff;*/
+}
+
+.nav-ul{
+    width: 100%;
+    /*background-color: yellow;*/
+}
+
+.pagination{
+    /*background-color: #1e1b29;*/
+    margin-left: 40%;
+    margin-top: 10px;
+}
+
+
+/*图片展示的布局*/
+.image_cont{
+    display: inline-block;
+    width: 30%;
+    height: 42%;
+    border-radius: 5px;
+    border:2px solid black;
+    /*background-color: floralwhite;*/
+    margin-top: 2%;
+    margin-left: 2%;
+}
+
+.img_ini{
+    width: 140px;
+    height: 140px;
+    margin-left: 5%;
+    border-radius: 5px;
+    margin-top: 3%;
+}
+
+.img_pre{
+    width: 140px;
+    height: 140px;
+    margin-left: 5%;
+    border-radius: 5px;
+    margin-top: 3%;
+}
+
+.image-div-left{
+    height: 60px;
+    width: 85%;
+    /*background-color: #33ccff;*/
+    display: inline-block;
+    float:left;
+}
+
+.image-div-right{
+    height: 60px;
+    width: 15%;
+    /*background-color: #33ccff;*/
+    display: inline-block;
+    float:left;
+}
+
+.image-div-right a{
+    margin-top: 20px;
+}
+
+.image-div-right a img{
+    height: 30px;
+    width: 30px;
+    /*margin: auto;*/
+    margin-top: 20px;
+    text-align:center;
+}
+
+.image_cont span{
+    font-size: 16px;
+    display: block;
+    /*text-align: center;*/
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
+

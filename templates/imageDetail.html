@@ -1,0 +1,225 @@
+{#<!DOCTYPE html>#}
+{#{% load static %}#}
+{##}
+{#<html>#}
+{##}
+{#<head>#}
+{#    <meta charset="utf-8">#}
+{#    <title>详细信息</title>#}
+{#    <link rel="stylesheet" type="text/css" href="{% static 'css/nav.css' %}" >#}
+{#    <link rel="stylesheet" type="text/css" href="{% static 'fonts/iconfont.css' %}" >#}
+{#    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" >#}
+{#    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" >#}
+{#    <link rel="stylesheet" type="text/css" href="{% static 'css/predict.css' %}" >#}
+{#</head>#}
+{##}
+{##}
+{#<body>#}
+{##}
+{#    <div id='head'>#}
+{#        <ul id="ul1">#}
+{#			<li><a href="#">首页</a></li>#}
+{#            <li><a href="#">职业学院</a></li>#}
+{#		</ul>#}
+{#        <ul id="ul2">#}
+{#			<li><a href="#" id="user_showName">会员课程</a></li>#}
+{#			<li><a href="#" id="login_status">极客社区</a></li>#}
+{#		</ul>#}
+{#    </div>#}
+{##}
+{#    <div class="nav" id="nav">#}
+{#        <div class="nav-top">#}
+{#            <div id="mini" style="border-bottom:1px solid rgba(255,255,255,.1)">#}
+{#                <img src="{% static 'imgs/mini.png' %}">#}
+{#            </div>#}
+{#        </div>#}
+{#        <ul>#}
+{#            <li class="nav-item" class="selected">#}
+{#                <a href="javascript:changeDiv(1)">#}
+{#                <a href="{% url 'polls:toImages' %}">#}
+{#                    <i class="my-icon nav-icon icon_1"></i>#}
+{#                    <span id="fir_div">我的收藏</span>#}
+{#                </a>#}
+{#            </li>#}
+{#            <li class="nav-item">#}
+{#                <a href="javascript:changeDiv(2)">#}
+{#                <a href="{% url 'polls:toHall' %}">#}
+{#                    <i class="my-icon nav-icon icon_2"></i>#}
+{#                    <span id="sec_div">图片大厅</span>#}
+{#                </a>#}
+{#            </li>#}
+{#            <li class="nav-item">#}
+{#                <a href="javascript:changeDiv(3)">#}
+{#                <a href="{% url 'polls:topredict' %}">#}
+{#                    <i class="my-icon nav-icon icon_3"></i>#}
+{#                    <span id="thi_div">预测上传</span>#}
+{#                </a>#}
+{#            </li>#}
+{#        </ul>#}
+{#    </div>#}
+{##}
+{#    <div id='main1'>#}
+{#        <p>请在这里上传图片并预测！</p>#}
+{#        <div class="image-content">#}
+{#                <img src="{% static 'Data/input/test1.png' %}" id="ini_img">#}
+{#                <img src="{% static 'Data/input/test1.png' %}" id="pre_img">#}
+{#        </div>#}
+{#        <div class="toPre">#}
+{#            <ul id="pre_ul">#}
+{#                <li><a>名称:</a>            <a id="show_name">--</a>  </li>#}
+{#                <li><a>发布者：</a>          <a id="show_publisher">--</a>   </li>#}
+{#                <li><a>无关背景：(黑色)</a>   <a id="show_0">--</a>   </li>#}
+{#                <li><a>烟草：(黄色)</a>      <a id="show_1">--</a>   </li>#}
+{#                <li><a>薏仁米:(红色)</a>     <a id="show_2">--</a>   </li>#}
+{#                <li><a>玉米:(绿色)</a>       <a id="show_3">--</a>   </li>#}
+{#                <li><a>建筑物:(蓝色)</a>     <a id="show_4">--</a>   </li>#}
+{#            </ul>#}
+{#        </div>#}
+{#    </div>#}
+{##}
+{##}
+{#    <div id='foot'>#}
+{#        <ul>#}
+{#            <li><a href="#">Tongji  |  </a></li>#}
+{#            <li><a href="#">zhujitao  |  </a></li>#}
+{#            <li><a href="#">1752267  |  </a></li>#}
+{#            <li><a href="#">Copyright</a></li>#}
+{#        </ul>#}
+{#    </div>#}
+{##}
+{#    <script type="text/javascript" src="{% static 'js/data.js' %}" ></script>#}
+{#    <script type="text/javascript" src="{% static 'js/jquery.min.js' %}" ></script>#}
+{#    <script type="text/javascript" src="{% static 'js/nav.js' %}" ></script>#}
+{#    <script type="text/javascript" src="{% static 'js/predict.js' %}" ></script>#}
+{#    <script type="text/javascript" src="{% static 'js/imageDetail.js' %}" ></script>#}
+{#</body>#}
+{#</html>#}
+
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>个人收藏</title>
+    {#  下面是通用的样式  #}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/nav.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/iconfont.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
+    {#  下面是页面独有样式  #}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/imageDetail.css' %}">
+</head>
+
+
+<body>
+
+<div id="head">
+    <div class="head-left">
+        <ul>
+            <li><a href="#"><img src="{% static 'imgs/home.png' %}"></a></li>
+        </ul>
+    </div>
+    <div class="head-right">
+        <ul>
+            <li><a href="#" id="user_showName">游客</a></li>
+            <li><a href="#" id="login_status">请先登录</a></li>
+        </ul>
+    </div>
+</div>
+
+
+<div id="mid">
+    <div class="nav" id="nav">
+        <div class="nav-top">
+            <div id="mini" style="border-bottom:1px solid rgba(255,255,255,.1)">
+                <img src="{% static 'imgs/mini.png' %}">
+            </div>
+        </div>
+        <ul>
+            <li class="nav-item" id="nav-item1">
+                <a>
+                    <i class="my-icon nav-icon icon_1"></i>
+                    <span id="fir_div">我的收藏</span>
+                </a>
+            </li>
+            <li class="nav-item" id="nav-item2">
+                <a>
+                    <i class="my-icon nav-icon icon_2"></i>
+                    <span id="sec_div">图片大厅</span>
+                </a>
+            </li>
+            <li class="nav-item" id="nav-item3">
+                <a>
+                    <i class="my-icon nav-icon icon_3"></i>
+                    <span id="thi_div">预测上传</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div id='main'>
+        <div id="main-top-left">
+            <p>详细信息如下：</p>
+            <div id="ini_img-container">
+                <img src="{% static 'Data/input/test1.png' %}" id="ini_img">
+                <span>原始图片</span>
+            </div>
+            <div id="pre_img-container">
+                <img src="{% static 'Data/input/test1.png' %}" id="pre_img">
+                <span>预测图片</span>
+            </div>
+        </div>
+
+        <div id="main-top-right">
+            <div id="right-top">
+                <div id="right-top-left">
+                    <span>发布者:</span>
+                    <span>编号:</span>
+                    <span>名称:</span>
+                    <span>无关背景:(黑色)</span>
+                    <span>烟草:(红色)</span>
+                    <span>薏仁米:(绿色)</span>
+                    <span>玉米:(黄色)</span>
+                    <span>建筑物:(蓝色)</span>
+                </div>
+                <div id="right-top-right">
+                    <a id="show_publisher">--</a>
+                    <a id="show_id">--</a>
+                    <a id="show_name">--</a>
+                    <a id="show_0">--</a>
+                    <a id="show_1">--</a>
+                    <a id="show_2">--</a>
+                    <a id="show_3">--</a>
+                    <a id="show_4">--</a>
+                </div>
+            </div>
+            <div id="right-bottom">
+                <span>描述信息：</span>
+                <textarea id="comment_text" cols="40" rows="5" readonly>描述信息</textarea>
+                <br>
+                <img src="{% static 'imgs/star.png' %}" id="star">
+                <a id="star-img">取消收藏</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id='foot'>
+    <ul>
+        <li><a href="#">Tongji</a></li>
+        <li><a href="#">zhujitao</a></li>
+        <li><a href="#">1752267</a></li>
+        <li><a href="#">Copyright</a></li>
+    </ul>
+</div>
+
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/nav.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/imageDetail.js' %}"></script>
+
+</body>
+</html>
